@@ -1,0 +1,25 @@
+.cylinder {
+    position: relative;
+    display: flex;
+}
+
+.leftWall {
+    box-sizing: border-box;
+    width: 1rem;
+    height: 6rem;
+    background-color: sandybrown;
+}
+
+.workingArea {
+    box-sizing: border-box;
+    width: 4rem;
+    height: 6rem;
+    position: relative;
+}
+
+.rightWall {
+    box-sizing: border-box;
+    width: 1rem;
+    height: 6rem;
+    background-color: sandybrown;
+}

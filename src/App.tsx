@@ -2,27 +2,16 @@ import React from 'react';
 
 import './App.css';
 
-import Piston from './components/piston/Piston';
+import Cylinder from './components/Cylinder/Cylinder';
+import Piston from './components/Piston/Piston';
+import ConRod from './components/ConRod/ConRod';
 
 function App() {
     return (
-        <Piston />
-        // <div className="App">
-        //   <header className="App-header">
-        //     <img src={logo} className="App-logo" alt="logo" />
-        //     <p>
-        //       Edit <code>src/App.tsx</code> and save to reload.
-        //     </p>
-        //     <a
-        //       className="App-link"
-        //       href="https://reactjs.org"
-        //       target="_blank"
-        //       rel="noopener noreferrer"
-        //     >
-        //       Learn React
-        //     </a>
-        //   </header>
-        // </div>
+        <Cylinder>
+            <Piston />
+            <ConRod />
+        </Cylinder>
     );
 }
 

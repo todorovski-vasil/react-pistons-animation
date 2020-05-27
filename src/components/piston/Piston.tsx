@@ -2,22 +2,19 @@ import React, { useEffect, useState } from 'react';
 
 import classes from './Piston.module.css';
 
-enum Position {
-    TDC = 0,
-    BDC = 1,
-}
+// enum Position {
+//     TDC = 0,
+//     BDC = 1,
+// }
 
 function Piston(props: object) {
-    // const [phase, setPhase] = useState(Position.TDC);
-    const [cssPhase, setCssPhase] = useState(classes.tdc);
-    // const position = useRef({ phase: Position.TDC, cssClass: classes.tdc });
+    const [cssPhase, setCssPhase] = useState(classes.bdc);
 
     useEffect(() => {
         const cycle = setInterval(() => {
             setCssPhase((cssPhase) =>
                 cssPhase === classes.bdc ? classes.tdc : classes.bdc
             );
-            // setPhase(phase ? Position.TDC : Position.BDC);
         }, 1000);
 
         return () => {
