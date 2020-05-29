@@ -2,10 +2,18 @@ import React from 'react';
 
 import classes from './ConRod.module.css';
 
-function ConRod(props: object) {
+interface Props {
+    offset?: string;
+}
+
+function ConRod(props: Props) {
+    const conRodStyle = {
+        animationDelay: props.offset,
+    };
+
     return (
-        <div className={classes.conrodContainer}>
-            <div className={classes.conrod}>
+        <div style={conRodStyle} className={classes.conrodContainer}>
+            <div style={conRodStyle} className={classes.conrod}>
                 <div className={classes.pistonBolt} />
                 <div className={classes.crankJournal} />
             </div>

@@ -24,6 +24,7 @@
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
+
 .piston > .ring1 {
     position: absolute;
     top: 0.6rem;
