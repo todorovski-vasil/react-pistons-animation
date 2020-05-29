@@ -1,14 +1,28 @@
+@keyframes PistonPump {
+    0% {
+        top: 0rem;
+        animation-timing-function: cubic-bezier(0.42, 0.15, 0.58, 1);
+    }
+
+    50% {
+        top: 3rem;
+        animation-timing-function: cubic-bezier(0.5, 0, 0.58, 1);
+    }
+
+    100% {
+        top: 0rem;
+    }
+}
+
 .piston {
     box-sizing: border-box;
     position: relative;
     width: 4rem;
     height: 3rem;
     background-color: darkcyan;
-    -webkit-transition: top 1s;
-    -moz-transition: top 1s;
-    -o-transition: top 1s;
-    transition: top 1s;
-    transition-timing-function: cubic-bezier(0.5, 0.2, 0.5, 0.8);
+    animation: PistonPump;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 .piston > .ring1 {
     position: absolute;
@@ -38,12 +52,4 @@
     border-style: solid;
     border-width: 0.1rem;
     background-color: gray;
-}
-
-.tdc {
-    top: 0rem;
-}
-
-.bdc {
-    top: 3rem;
 }

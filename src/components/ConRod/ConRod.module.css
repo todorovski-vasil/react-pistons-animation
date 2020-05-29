@@ -1,3 +1,21 @@
+@keyframes RotateConRodContainer {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-90deg);
+    }
+    50% {
+        transform: rotate(-180deg);
+    }
+    75% {
+        transform: rotate(-270deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
 .conrodContainer {
     box-sizing: border-box;
     position: absolute;
@@ -5,11 +23,35 @@
     left: 0.5rem;
     width: 3rem;
     height: 8rem;
-    background-color: rgba(255, 0, 0, 0.2);
-    transition: top 0.5s;
-    /* transition: rotate 0.5s; */
-    /* transition-timing-function: cubic-bezier(0.5, 0.2, 0.5, 0.8); */
-    animation: ChangeConRodPhase 2s linear infinite;
+    /* background-color: rgba(255, 0, 0, 0.2); */
+    transform-origin: 1.5rem 8rem;
+    animation: RotateConRodContainer;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes RotateConRod {
+    0% {
+        transform: rotate(0%);
+        animation-timing-function: cubic-bezier(0.44, 0.48, 0.52, 0.56);
+    }
+    25% {
+        transform: rotate(106deg);
+        animation-timing-function: cubic-bezier(0.44, 0.48, 0.52, 0.56);
+    }
+    50% {
+        transform: rotate(180deg);
+        animation-timing-function: cubic-bezier(0.48, 0.44, 0.56, 0.52);
+    }
+    75% {
+        transform: rotate(254deg);
+        animation-timing-function: cubic-bezier(0.48, 0.44, 0.56, 0.52);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .conrod {
@@ -18,7 +60,11 @@
     width: 3rem;
     height: 8rem;
     background-color: rgba(0, 255, 0, 0.2);
-    animation: ChangeConRodAngle 2s linear infinite;
+    transform-origin: 1.5rem 6.5rem;
+    animation: RotateConRod;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
 }
 
 .pistonBolt {
@@ -45,90 +91,4 @@
     border-style: solid;
     border-color: red;
     border-width: 0.1rem;
-}
-
-/* .tdc {
-    top: 1rem;
-    transition-timing-function: cubic-bezier(0.2, 0.5, 0.5, 0.8);
-}
-
-.ldc {
-    top: 2.5rem;
-    left: 0.5rem;
-    width: 3rem;
-    height: 8rem;
-    transform: rotate(20deg);
-    transform-origin: 1.5rem 1rem;
-    transition-timing-function: cubic-bezier(0.5, 0.2, 0.8, 0.5);
-}
-
-.bdc {
-    top: 4rem;
-    left: 0.5rem;
-    width: 3rem;
-    height: 8rem;
-    transition-timing-function: cubic-bezier(0.2, 0.5, 0.5, 0.8);
-}
-
-.rdc {
-    top: 2.5rem;
-    left: 0.5rem;
-    width: 3rem;
-    height: 8rem;
-    transition-timing-function: cubic-bezier(0.5, 0.2, 0.8, 0.5);
-} */
-
-@keyframes ChangeConRodAngle {
-    0% {
-        transform-origin: 1.5rem 6.5rem;
-        transform: rotate(0%);
-        transition-timing-function: cubic-bezier(0.5, 0.2, 0.8, 0.5);
-    }
-    25% {
-        transform-origin: 1.5rem 6.5rem;
-        transform: rotate(110deg);
-        transition-timing-function: cubic-bezier(0.2, 0.5, 0.5, 0.8);
-    }
-    50% {
-        transform-origin: 1.5rem 6.5rem;
-        transform: rotate(180deg);
-        transition-timing-function: cubic-bezier(0.5, 0.2, 0.8, 0.5);
-    }
-    75% {
-        transform-origin: 1.5rem 6.5rem;
-        transform: rotate(250deg);
-        transition-timing-function: cubic-bezier(0.2, 0.5, 0.5, 0.8);
-    }
-    100% {
-        transform-origin: 1.5rem 6.5rem;
-        transform: rotate(360deg);
-        transition-timing-function: cubic-bezier(0.2, 0.5, 0.5, 0.8);
-    }
-}
-
-@keyframes ChangeConRodPhase {
-    0% {
-        transform-origin: 1.5rem 8rem;
-        transition-timing-function: cubic-bezier(0.5, 0.2, 0.8, 0.5);
-    }
-    25% {
-        transform-origin: 1.5rem 8rem;
-        transform: rotate(-90deg);
-        transition-timing-function: cubic-bezier(0.2, 0.5, 0.5, 0.8);
-    }
-    50% {
-        transform-origin: 1.5rem 8rem;
-        transform: rotate(-180deg);
-        transition-timing-function: cubic-bezier(0.5, 0.2, 0.8, 0.5);
-    }
-    75% {
-        transform-origin: 1.5rem 8rem;
-        transform: rotate(-270deg);
-        transition-timing-function: cubic-bezier(0.2, 0.5, 0.5, 0.8);
-    }
-    100% {
-        transform-origin: 1.5rem 8rem;
-        transform: rotate(-360deg);
-        transition-timing-function: cubic-bezier(0.2, 0.5, 0.5, 0.8);
-    }
 }
