@@ -3,12 +3,23 @@ import React from 'react';
 import classes from './Piston.module.css';
 
 interface Props {
+    width?: string;
+    left?: string;
     offset?: string;
 }
 
 function Piston(props: Props) {
-    const pistonStyle = {
+    const customStyle = {
+        width: props.width ? props.width : '4rem',
+    };
+
+    const customAnimation = {
         animationDelay: props.offset,
+    };
+
+    const pistonStyle = {
+        ...customStyle,
+        ...customAnimation,
     };
 
     return (

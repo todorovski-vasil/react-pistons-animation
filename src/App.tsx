@@ -10,26 +10,27 @@ import CrankShaft from './components/CrankShaft/CrankShaft';
 const engineStyle = {
     position: 'absolute' as 'absolute',
     top: '1rem',
-    left: '5rem',
-    width: '18rem',
-    height: '15rem',
+    left: '10rem',
 };
 
-function App() {
-    const delay = ((2 / 360) * (76 + 52)).toFixed(3);
-    // const delay = ((2 / 360) * 180).toFixed(3);
+const angle = 52;
+const bore = '2.5rem';
 
+const delay = ((2 / 360) * (180 - angle)).toFixed(3);
+// const delay = ((2 / 360) * (angle + 90)).toFixed(3);     // crossplane WIP
+
+function App() {
     return (
         <div style={engineStyle}>
-            <Cylinder angle={26}>
-                <Piston />
-                <ConRod />
-                <CrankShaft />
-            </Cylinder>
-            <Cylinder angle={-26} offset={`${delay}s`}>
+            <Cylinder angle={angle / 2} width={bore}>
                 <Piston />
                 <ConRod />
             </Cylinder>
+            <Cylinder angle={-(angle / 2)} width={bore} offset={`${delay}s`}>
+                <Piston />
+                <ConRod />
+            </Cylinder>
+            <CrankShaft />
         </div>
     );
 }
