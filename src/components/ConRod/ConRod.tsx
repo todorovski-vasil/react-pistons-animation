@@ -3,12 +3,14 @@ import React from 'react';
 import classes from './ConRod.module.css';
 
 interface Props {
+    period?: number;
     offset?: string;
 }
 
 function ConRod(props: Props) {
     const conRodStyle = {
         animationDelay: props.offset,
+        animationDuration: `${props.period}s`,
     };
 
     return (

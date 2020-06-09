@@ -5,16 +5,20 @@ import classes from './Piston.module.css';
 interface Props {
     width?: string;
     left?: string;
+    period?: number;
     offset?: string;
 }
 
 function Piston(props: Props) {
+    const { period } = props;
+
     const customStyle = {
         width: props.width ? props.width : '4rem',
     };
 
     const customAnimation = {
         animationDelay: props.offset,
+        animationDuration: `${period}s`,
     };
 
     const pistonStyle = {

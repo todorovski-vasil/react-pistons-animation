@@ -2,7 +2,11 @@ import React from 'react';
 
 import classes from './CrankShaft.module.css';
 
-function CrankShaft(props: object) {
+interface Props {
+    period: number;
+}
+
+function CrankShaft(props: Props) {
     return <div className={classes.crankShaft}></div>;
 }
 

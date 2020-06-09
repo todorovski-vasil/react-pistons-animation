@@ -6,6 +6,8 @@ interface Props {
     width?: string;
     left?: string;
     angle: number;
+    speed?: number;
+    period: number;
     offset?: string;
     children: Array<ReactElement>;
 }
@@ -14,6 +16,7 @@ interface ChildProps {
     width?: string;
     left?: string;
     key: number;
+    period: number;
     offset?: string;
 }
 
@@ -35,6 +38,7 @@ function Cylinder(props: Props) {
             <div className={classes.workingArea}>
                 {React.Children.map(props.children, (child, index) => {
                     const childProps: ChildProps = {
+                        period: props.period,
                         offset: props.offset,
                         key: index,
                     };
