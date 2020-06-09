@@ -14,6 +14,8 @@ const inputStyle: CSSProperties = {
     left: '1rem',
 };
 
+const inputLabelStyle: CSSProperties = { marginLeft: '2rem' };
+
 function App() {
     const [bore, setBore] = useState(defaultBore);
     const [angle, setAngle] = useState(defaultAngle);
@@ -22,6 +24,7 @@ function App() {
 
     return (
         <div>
+            <div style={inputLabelStyle}>angle: {angle}</div>
             <input
                 onChange={(event) => {
                     const newAngle = Number.parseFloat(event.target.value);
@@ -33,12 +36,13 @@ function App() {
                 max='360'
                 value={angle}
             />
-            <div>angle: {angle}</div>
+            <div style={inputLabelStyle}>speed: {speed}</div>
+            <div style={inputLabelStyle}>period: {period}</div>
             <input
                 onChange={(event) => {
                     const newSpeed = Number.parseFloat(event.target.value);
                     setSpeed(newSpeed);
-                    setPeriod(1 / newSpeed);
+                    setPeriod(Number.parseFloat((1 / newSpeed).toFixed(3)));
                 }}
                 style={inputStyle}
                 type='range'
@@ -47,8 +51,7 @@ function App() {
                 max='10'
                 value={speed}
             />
-            <div>speed: {speed}</div>
-            <div>period: {period}</div>
+            <div style={inputLabelStyle}>bore: {bore}rem</div>
             <input
                 onChange={(event) => {
                     const newBore = Number.parseFloat(event.target.value);
@@ -61,7 +64,6 @@ function App() {
                 max='6'
                 value={bore}
             />
-            <div>bore: {bore}rem</div>
             <Engine bore={`${bore}rem`} angle={angle} period={period} />
             <Engine bore={'3.5rem'} angle={90} period={2} />
         </div>
