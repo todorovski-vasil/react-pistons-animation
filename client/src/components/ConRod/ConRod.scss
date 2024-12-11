@@ -1,0 +1,94 @@
+@keyframes RotateConRodContainer {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  75% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes RotateConRod {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.44, 0.48, 0.52, 0.56);
+  }
+  25% {
+    transform: rotate(106deg);
+    animation-timing-function: cubic-bezier(0.44, 0.48, 0.52, 0.56);
+  }
+  50% {
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0.48, 0.44, 0.56, 0.52);
+  }
+  75% {
+    transform: rotate(254deg);
+    animation-timing-function: cubic-bezier(0.48, 0.44, 0.56, 0.52);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.conrodContainer {
+  box-sizing: border-box;
+  position: absolute;
+  top: 1rem;
+  left: calc((100% - 3rem) / 2);
+  width: 3rem;
+  height: 8rem;
+  /* background-color: rgba(255, 0, 0, 0.2); */
+  transform-origin: calc(100% / 2) 8rem;
+  animation: RotateConRodContainer;
+  /* animation-duration: 2s; */
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+
+  .conrod {
+    box-sizing: border-box;
+    position: absolute;
+    width: 3rem;
+    height: 8rem;
+    background-color: rgba(0, 255, 0, 0.2);
+    transform-origin: calc(100% / 2) 6.5rem;
+    animation: RotateConRod;
+    /* animation-duration: 2s; */
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+
+    .pistonBolt {
+      box-sizing: border-box;
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 0.5rem;
+      /* border-style: solid; */
+      border-color: red;
+      border-width: 0.1rem;
+    }
+
+    .crankJournal {
+      box-sizing: border-box;
+      position: absolute;
+      top: 5.7rem;
+      left: 0.7rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 0.8rem;
+      border-style: solid;
+      border-color: red;
+      border-width: 0.1rem;
+    }
+  }
+}
